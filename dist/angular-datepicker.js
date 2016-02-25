@@ -1,4 +1,5 @@
-(function (global, factory) {'use strict';var fnc;fnc = (typeof exports === 'object' && typeof module !== 'undefined') ? module.exports = factory(require('angular'), require('moment')) :(typeof define === 'function' && define.amd) ? define(['angular', 'moment'], factory) :factory(global.angular, global.moment);}(this, function (angular, moment) {
+'use strict';
+(function(angular){
 var Module = angular.module('datePicker', []);
 
 Module.constant('datePickerConfig', {
@@ -1035,4 +1036,4 @@ $templateCache.put('templates/datepicker.html',
   );
 
 }]);
-}));
+})(angular);
