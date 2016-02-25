@@ -242,7 +242,7 @@ Module.directive('dateTime', ['$compile', '$document', '$filter', 'dateTimeConfi
         });
       }
 
-      element.bind('focus', showPicker);
+      element.bind('click', showPicker);
       element.bind('blur', clear);
       getTemplate();
     }
