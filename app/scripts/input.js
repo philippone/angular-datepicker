@@ -83,7 +83,8 @@ Module.directive('dateTime', ['$compile', '$document', '$filter', 'dateTimeConfi
         if (viewValue.length === format.length) {
           return viewValue;
         }
-        return undefined;
+        //return undefined;
+        return null;
       }
 
       function setMin(date) {
