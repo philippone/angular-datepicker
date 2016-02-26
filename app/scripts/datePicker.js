@@ -10,13 +10,13 @@ Module.constant('datePickerConfig', {
     month: 'month',
     date: 'day',
     hours: 'hours',
-    minutes: 'minutes',
+    minutes: 'minutes'
   },
   viewConfig: {
     year: ['years', 'isSameYear'],
     month: ['months', 'isSameMonth'],
     hours: ['hours', 'isSameHour'],
-    minutes: ['minutes', 'isSameMinutes'],
+    minutes: ['minutes', 'isSameMinutes']
   },
   step: 5
 });

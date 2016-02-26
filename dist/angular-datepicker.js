@@ -11,13 +11,13 @@ Module.constant('datePickerConfig', {
     month: 'month',
     date: 'day',
     hours: 'hours',
-    minutes: 'minutes',
+    minutes: 'minutes'
   },
   viewConfig: {
     year: ['years', 'isSameYear'],
     month: ['months', 'isSameMonth'],
     hours: ['hours', 'isSameHour'],
-    minutes: ['minutes', 'isSameMinutes'],
+    minutes: ['minutes', 'isSameMinutes']
   },
   step: 5
 });
@@ -400,7 +400,7 @@ angular.module('datePicker').factory('datePickerUtils', function () {
       var weeks = [];
 
       while (weeks.length < 6) {
-        if (m.year() === startYear && m.month() > startMonth) {
+        if ((m.year()*100 + m.month()) > (startYear*100 + startMonth)) {
           break;
         }
         weeks.push(this.getDaysOfWeek(m));
@@ -932,7 +932,7 @@ $templateCache.put('templates/datepicker.html',
     "      <thead>\n" +
     "      <tr>\n" +
     "        <th ng-click=\"prev()\">&lsaquo;</th>\n" +
-    "        <th colspan=\"5\" class=\"switch\" ng-click=\"setView('month')\" ng-bind=\"date|mFormat:'YYYY MMMM':tz\"></th>\n" +
+    "        <th colspan=\"5\" class=\"switch\" ng-click=\"setView('month')\" ng-bind=\"date|mFormat:'MMMM YYYY':tz\"></th>\n" +
     "        <th ng-click=\"next()\">&rsaquo;</i></th>\n" +
     "      </tr>\n" +
     "      <tr>\n" +
@@ -1032,7 +1032,7 @@ $templateCache.put('templates/datepicker.html',
     "      </tbody>\n" +
     "    </table>\n" +
     "  </div>\n" +
-    "</div>"
+    "</div>\n"
   );
 
 }]);
