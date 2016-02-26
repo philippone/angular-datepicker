@@ -68,7 +68,7 @@
 
       <form name="demoForm">
       <div>
-        <h5>Min ({{demoForm.pickerMinDate.$error.min ? 'Min: invalid' : 'Min: valid'}})</h5>        
+        <h5>Min ({{demoForm.pickerMinDate.$error.min ? 'Min: invalid' : 'Min: valid'}})</h5>
         <input date-time name="pickerMinDate" ng-model="dates.today" id="pickerMinDate" min-date="minDate" view="date" min-view="hours" timezone="UTC" format="lll">
       </div>
 
@@ -166,14 +166,14 @@
       $scope.dates = {
         today: moment.tz('UTC').hour(12).startOf('h'), //12:00 UTC, today.
         minDate: moment.tz('UTC').add(-4, 'd').hour(12).startOf('h'), //12:00 UTC, four days ago.
-        maxDate: moment.tz('UTC').add(4, 'd').hour(12).startOf('h'), //12:00 UTC, in four days.
+        maxDate: moment.tz('UTC').add(4, 'd').hour(12).startOf('h') //12:00 UTC, in four days.
       };
 
       $scope.options = {
         view: 'date',
         format: 'lll',
         maxView: false,
-        minView: 'hours',
+        minView: 'hours'
       };
 
       $scope.minDate = $scope.dates.minDate;
@@ -184,13 +184,13 @@
          "DD MMM YYYY",
          "ddd MMM DD YYYY",
          "D MMM YYYY HH:mm",
-         "lll",
+         "lll"
       ];
 
       $scope.timezones = [
         ['London, UK', 'Europe/London'],
         ['Hong Kong, China', 'Asia/Hong_Kong'],
-        ['Vancouver, Canada', 'America/Vancouver'],
+        ['Vancouver, Canada', 'America/Vancouver']
       ];
 
       $scope.views = ['year', 'month', 'date', 'hours', 'minutes'];
@@ -200,15 +200,15 @@
       $scope.changeDate = function (modelName, newDate) {
         console.log(modelName + ' has had a date change. New value is ' + newDate.format());
         $scope.callbackState = 'Callback: Fired';
-      }
+      };
 
       $scope.changeMinMax = function (modelName, newValue) {
         //minDate or maxDate updated. Generate events to update relevant pickers
 
         var values = {
           minDate: false,
-          maxDate: false,
-        }
+          maxDate: false
+        };
 
         if (modelName === 'dates.minDate') {
           values.minDate = newValue;
@@ -222,7 +222,7 @@
 
         //For either min/max update, update the pickers which use both.
         $scope.$broadcast('pickerUpdate', ['pickerBothDates', 'pickerBothDatesDiv'], values);
-      }
+      };
 
       $scope.changeData = function (type) {
         var values = {},
